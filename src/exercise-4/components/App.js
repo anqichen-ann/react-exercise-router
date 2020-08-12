@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router,  Switch} from 'react-router-dom';
 import {Route} from "react-router";
 import Home from "./Home";
-import About from "./About";
+// import About from "./About";
 import User from "./User";
 import NotMatch from "./NotMatch";
 
@@ -11,14 +11,26 @@ class App extends Component {
     return (
       <div className="app">
         <Router>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/:id(\d+)' component={User} />
+            <Route path='/about' component={User} />
             <Route component={NotMatch} />
-            <Route path='/' component={Home} />
-            <Route path='/:user' component={User} />
-            <Route path='/about' component={About} />
+          </Switch>
+            
         </Router>
       </div>
     );
   }
 }
+
+// const Child = ({ match }) => (
+//   if (/^\d+$/) {
+    
+//   }
+//   <div>
+//     <h3>ID: {match.params.id}</h3>
+//   </div>
+// )
 
 export default App;

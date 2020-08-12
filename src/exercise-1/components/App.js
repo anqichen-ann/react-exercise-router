@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../styles/App.css';
-import {BrowserRouter as Router, Route, Link, NavLink, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, NavLink, Switch, Redirect} from 'react-router-dom';
 import Home from './Home/Home';
 import Profile from './Profile/Profile';
 import About from './About/About';
@@ -30,7 +30,7 @@ class App extends Component {
             <Switch>
             <Route exact path='/' component={Home}  />
             <Route path='/products' component={Products}  />
-            <Route path='/goods' component={Products}  />
+            <Redirect from="/goods" to="/products"/>
             <Route path='/my-profile' component={Profile}  />
             <Route path='/about-us' component={About}  />
             <Route component={Home}  />
