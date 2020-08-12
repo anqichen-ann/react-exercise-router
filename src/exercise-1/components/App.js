@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import '../styles/App.css';
-import {BrowserRouter as Router, Route, Link, NavLink} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, NavLink, Switch} from 'react-router-dom';
 import Home from './Home/Home';
 import Profile from './Profile/Profile';
 import About from './About/About';
+import Products from './Products/Products';
 
 class App extends Component {
   render() {
@@ -11,20 +12,27 @@ class App extends Component {
       <div className="app">
         <Router>
           <div className='list'>
-          <ul>
-            <li>
-              <NavLink to='/' className='link' >Home</NavLink>
-            </li>
-            <li>
-              <NavLink to='/my-profile' className='link'>My Profile</NavLink>
-            </li>
-            <li>
-              <NavLink to='/about-us' className='link'>About Us</NavLink>
-            </li>
-            </ul></div>        
+            <ul>
+              <li>
+                <NavLink to='/' className='link' >Home</NavLink>
+              </li>
+              <li>
+                <NavLink to='/products' className='link' >Products</NavLink>
+              </li>
+              <li>
+                <NavLink to='/my-profile' className='link'>My Profile</NavLink>
+              </li>
+              <li>
+                <NavLink to='/about-us' className='link'>About Us</NavLink>
+              </li>
+              </ul>
+            </div>        
+            <Switch>
             <Route exact path='/' component={Home}  />
-            <Route exact path='/my-profile' component={Profile}  />
-            <Route exact path='/about-us' component={About}  />
+            <Route path='/products' component={Products}  />
+            <Route path='/my-profile' component={Profile}  />
+            <Route path='/about-us' component={About}  />
+            </Switch>
 
         </Router>
       </div>

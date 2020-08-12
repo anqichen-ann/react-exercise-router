@@ -24,6 +24,10 @@ ul li{
 .link {
     text-decoration: none;
 }
+
+.select{
+    text-decoration: underline;
+}
 .active{
     text-decoration: underline;
 }
