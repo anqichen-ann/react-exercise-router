@@ -24,13 +24,4 @@ class App extends Component {
   }
 }
 
-// const Child = ({ match }) => (
-//   if (/^\d+$/) {
-    
-//   }
-//   <div>
-//     <h3>ID: {match.params.id}</h3>
-//   </div>
-// )
-
 export default App;

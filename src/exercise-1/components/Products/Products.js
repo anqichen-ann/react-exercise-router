@@ -1,7 +1,6 @@
 import React from 'react';
 import './Products.css';
-import {Link, Switch, Route} from 'react-router-dom';
-import Product from '../Product/Product';
+import {Link} from 'react-router-dom';
 
 class Products extends React.Component {
     constructor(props){
@@ -45,9 +44,6 @@ class Products extends React.Component {
                     ))
                 }
             </ul>
-            <Switch>
-                <Route path='/products/:id' component={Product} />
-            </Switch>
         </div>
     }
 }

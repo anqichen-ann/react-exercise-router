@@ -5,6 +5,7 @@ import Home from './Home/Home';
 import Profile from './Profile/Profile';
 import About from './About/About';
 import Products from './Products/Products';
+import Product from  './Product/Product';
 
 class App extends Component {
   render() {
@@ -14,7 +15,7 @@ class App extends Component {
           <div className='list'>
             <ul>
               <li>
-                <NavLink to='/' className='link' >Home</NavLink>
+                <NavLink exact to='/' className='link' >Home</NavLink>
               </li>
               <li>
                 <NavLink to='/products' className='link' >Products</NavLink>
@@ -29,10 +30,11 @@ class App extends Component {
             </div>        
             <Switch>
             <Route exact path='/' component={Home}  />
-            <Route path='/products' component={Products}  />
+            <Route exact path='/products' component={Products}  />
             <Redirect from="/goods" to="/products"/>
             <Route path='/my-profile' component={Profile}  />
             <Route path='/about-us' component={About}  />
+            <Route path='/products/:id' component={Product} />
             <Route component={Home}  />
             </Switch>
 
